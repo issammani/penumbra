@@ -31,7 +31,7 @@
     "test:browserstack": "karma start karma.browserstack.js",
     "####### Build #######": "",
     "clean": "rimraf dist && rimraf ts-build && rimraf coverage",
-    "build": "yarn clean && mkdir -p dist && webpack --config webpack.prod.js && tsc && tsc --module es6 --outDir dist/lib-esm",
+    "build": "yarn clean && mkdir -p dist && webpack --config webpack.prod.js && tsc && tsc --target es6 --outDir dist/lib-esm",
     "build:example": "rimraf example/build && yarn build && mkdir -p example/build && cp example/*.* example/build/ && cp -a dist/. example/build/",
     "build:demo": "rimraf demo/build && yarn build && mkdir -p demo/build && cp demo/*.* demo/build/ && cp -a dist/. demo/build/",
     "webpack:watch": "yarn clean && webpack --config webpack.dev.js --watch"
